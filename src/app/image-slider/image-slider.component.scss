@@ -1,0 +1,26 @@
+.slide-image {
+    height: 650px;
+    width: 100%;
+    display: block;
+    margin: 0 auto 10;
+    margin-top: 1px;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+
+    .col-md-12 {
+        padding-left: 1px;
+        padding-right: 1px;
+
+        .carousel-caption {
+            font-family: 'Montserrant';
+            font-style: oblique;
+            color: #61666b;
+        }
+    }
+}
+
+h3 {
+    font-size: 70px;
+}

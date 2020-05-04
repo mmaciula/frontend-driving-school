@@ -1,0 +1,27 @@
+<div class="container" *ngIf="loggedUser; else loggedOut">
+    <mat-card class="profile-card">
+        <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{ loggedUser.username }}</mat-card-title>
+              <mat-card-subtitle>
+                  <div *ngFor="let r of loggedUser.roles"> {{ r }}</div>
+              </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+              <mat-list>
+                    <div mat-subheader>Profil</div>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>account_circle</mat-icon> {{ loggedUser.name }} {{ loggedUser.surname }}
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>mail_outline</mat-icon> {{ loggedUser.email }}
+                    </mat-list-item>
+              </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+  
+<ng-template #loggedOut>
+    Musisz się zalogować.
+</ng-template>
