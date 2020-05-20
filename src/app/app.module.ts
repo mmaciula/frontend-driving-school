@@ -16,7 +16,10 @@ import { InterceptorProviders } from './auth/error.interceptor';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule, MatCardModule, MatListModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatListModule, MatTabsModule, MatTableModule, MatSortModule,
+  MatPaginatorModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoursesListComponent } from './course/courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { MatIconModule, MatCardModule, MatListModule } from '@angular/material';
     AdminComponent,
     ModeratorComponent,
     UserComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    CoursesListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,12 @@ import { MatIconModule, MatCardModule, MatListModule } from '@angular/material';
     FlexLayoutModule,
     MatIconModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [InterceptorProviders],
   bootstrap: [AppComponent]

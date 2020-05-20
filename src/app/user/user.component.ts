@@ -9,11 +9,9 @@ import { UserService } from '../service/user.service';
 export class UserComponent implements OnInit {
   userContent = '';
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit() {
-    this.userService.getUserContent().subscribe(data => { this.userContent = data; },
-      errorMessage => { this.userContent = JSON.parse(errorMessage.error).message; });
+  constructor(private userService: UserService) {
   }
+
+  ngOnInit() {}
 
 }

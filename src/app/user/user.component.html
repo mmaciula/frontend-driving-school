@@ -1,5 +1,28 @@
-<div class="container">
-    <header class="jumbotron">
-      <p>{{ userContent }}</p>
-    </header>
-  </div>
+<div class="tab">
+  <mat-tab-group mat-align-tabs="center" dynamicHeight="true">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="matLabel">
+          Moje kursy
+        </div>
+      </ng-template> 
+      <ng-template matTabContent>
+        <div class="tabContent">
+          Moje kursy content
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="matLabel">
+          Dostępne kursy
+        </div>
+      </ng-template> 
+      <ng-template matTabContent>
+        <div class="tabContent">
+          <app-courses-list></app-courses-list>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
