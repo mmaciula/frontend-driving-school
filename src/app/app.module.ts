@@ -21,6 +21,8 @@ import { MatIconModule, MatCardModule, MatListModule, MatTabsModule, MatTableMod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesListComponent } from './course/courses-list/courses-list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { UserCoursesComponent } from './course/user-courses/user-courses/user-courses.component';
+import { CoursePracticalsComponent } from './course/course-practicals/course-practicals.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ToastrModule } from 'ngx-toastr';
     ModeratorComponent,
     UserComponent,
     ImageSliderComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    UserCoursesComponent,
+    CoursePracticalsComponent
   ],
   imports: [
     BrowserModule,

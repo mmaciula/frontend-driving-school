@@ -1,0 +1,32 @@
+<div class="practicals-container">
+    <mat-card class="practicals-card">
+        <mat-card-header>
+              <mat-card-title class="name">Kurs: </mat-card-title>
+              <mat-card-subtitle>
+                    <div class="instructor">Instructor: </div>
+              </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <mat-table #table [dataSource]="coursePracticals">
+                    <ng-container matColumnDef="date">
+                        <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.date.substring(0,10)}} </mat-cell>
+                    </ng-container>         
+                    <ng-container matColumnDef="time">
+                        <mat-header-cell *matHeaderCellDef>Godzina</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.dateOfActivity.substring(11,16)}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                        <mat-cell *matCellDef="let element"><button mat-raised-button color="accent"
+                                [disabled]="element.student !== null" (click)="signUp(element.id)">AAAA</button>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div> 
+        </mat-card-content>
+    </mat-card>
+</div>
