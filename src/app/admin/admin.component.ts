@@ -12,10 +12,6 @@ export class AdminComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getAdminContent().subscribe(
-      data => { this.adminContent = data; },
-      errorMessage => { this.adminContent = JSON.parse(errorMessage.error).message; }
-    );
   }
 
 }

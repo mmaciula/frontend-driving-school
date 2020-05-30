@@ -12,10 +12,6 @@ export class ModeratorComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getModContent().subscribe(
-      data => { this.modContent = data; },
-      errorMessage => { this.modContent = JSON.parse(errorMessage.error).message; }
-    );
   }
 
 }

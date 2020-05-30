@@ -17,7 +17,7 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatCardModule, MatListModule, MatTabsModule, MatTableModule, MatSortModule,
-  MatPaginatorModule } from '@angular/material';
+  MatPaginatorModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesListComponent } from './course/courses-list/courses-list.component';
 
@@ -48,7 +48,10 @@ import { CoursesListComponent } from './course/courses-list/courses-list.compone
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [InterceptorProviders],
   bootstrap: [AppComponent]
