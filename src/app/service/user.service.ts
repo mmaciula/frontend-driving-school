@@ -9,10 +9,15 @@ const API = 'http://localhost:8080/api/users';
   providedIn: 'root'
 })
 export class UserService {
+  body = null;
 
   constructor(private httpClient: HttpClient) { }
 
   public getSignedInUser(): Observable<UserDTO> {
     return this.httpClient.get<UserDTO>(API + '/me');
+  }
+
+  public assignCourseToUser(id): Observable<any> {
+    return this.httpClient.put(API + '/course/add/' + id, this.body);
   }
 }

@@ -32,7 +32,7 @@
         <ng-container matColumnDef="signIn">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element">
-            <button mat-raised-button (click)="selectCourse(element.id)" [disabled]="alreadyRegistered(element.id)" [disabled]="element.members<1">
+            <button mat-raised-button *ngIf="element.members > 0 && !registered(element.id)"  (click)="selectCourse(element.id)">
               Zapisz się
             </button>
           </td>

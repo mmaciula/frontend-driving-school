@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 @import '~@angular/material/theming';
 
+@import '~ngx-toastr/toastr';
+
 @include mat-core();
 
 $dark-primary: mat-palette($mat-deep-purple, 600);

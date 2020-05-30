@@ -20,6 +20,7 @@ import { MatIconModule, MatCardModule, MatListModule, MatTabsModule, MatTableMod
   MatPaginatorModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesListComponent } from './course/courses-list/courses-list.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CoursesListComponent } from './course/courses-list/courses-list.compone
     MatPaginatorModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ToastrModule.forRoot()
   ],
   providers: [InterceptorProviders],
   bootstrap: [AppComponent]

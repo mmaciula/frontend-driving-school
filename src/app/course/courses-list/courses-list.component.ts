@@ -6,6 +6,7 @@ import { CourseService } from 'src/app/service/course.service';
 import { CourseDTO } from '../model/course.model';
 import { UserService } from 'src/app/service/user.service';
 import { UserDTO } from '../model/user.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-courses-list',
@@ -22,7 +23,7 @@ export class CoursesListComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private courseService: CourseService, private userService: UserService) {}
+  constructor(private courseService: CourseService, private userService: UserService, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.courseInfo();
@@ -38,10 +39,11 @@ export class CoursesListComponent implements OnInit {
     this.userService.getSignedInUser().subscribe(d => {
       this.user = d;
       this.userCourses.data = this.user.courses;
+      console.log(this.user.courses);
     });
   }
 
-  alreadyRegistered(id: number): boolean {
+  registered(id): boolean {
     let registered = false;
 
     this.userCourses.data.forEach(course => {
@@ -53,8 +55,17 @@ export class CoursesListComponent implements OnInit {
     return registered;
   }
 
-  selectCourse(id: number) {
+  selectCourse(id) {
     this.courseService.setCourseId(id);
+    console.log(id);
+    this.userService.assignCourseToUser(id).subscribe();
+    this.toastr.success('Nie zapomnij dokonać płatności', 'Gratulacje! Zapisałeś się na kurs', {
+      positionClass: 'toast-top-center'
+    });
+    setTimeout(() => {
+      window.location.reload();
+    },
+    5001);
   }
 
   filter(event: Event) {
