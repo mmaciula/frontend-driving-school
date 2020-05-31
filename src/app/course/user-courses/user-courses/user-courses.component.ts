@@ -23,6 +23,7 @@ export class UserCoursesComponent implements OnInit {
   constructor(private userService: UserService, private courseService: CourseService) { }
 
   ngOnInit() {
+    this.paginator._intl.itemsPerPageLabel = 'Liczba elementów';
     this.courses.sort = this.sort;
     this.courses.paginator = this.paginator;
     this.courseInfo();
@@ -40,6 +41,11 @@ export class UserCoursesComponent implements OnInit {
       this.user = info;
       this.courses.data = this.user.courses;
     });
+  }
+
+  filter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.courses.filter = filterValue.trim().toLowerCase();
   }
 
 }

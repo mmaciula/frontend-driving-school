@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-practicals',
@@ -18,17 +19,21 @@ export class CoursePracticalsComponent implements OnInit {
   practicals = new MatTableDataSource<any>();
   courseId;
 
-  constructor(private courseService: CourseService, private practicalsSerivce: PracticalsService, private toastr: ToastrService) { }
+  constructor(private courseService: CourseService, private practicalsSerivce: PracticalsService, private toastr: ToastrService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.paginator._intl.itemsPerPageLabel = 'Liczba elementów';
     this.practicals.sort = this.sort;
     this.practicals.paginator = this.paginator;
+    this.getCoursePracticals();
   }
 
   getCoursePracticals() {
     this.courseService.currentCourseId.subscribe(
       id => {
         this.courseId = id;
+        console.log(this.courseId);
       }
     );
     this.practicalsSerivce.getPracticalsByCourse(this.courseId).subscribe(
@@ -46,6 +51,14 @@ export class CoursePracticalsComponent implements OnInit {
         });
       }
     );
+    setTimeout(() => {
+      this.router.navigate(['/user']);
+    }, 3000);
+  }
+
+  filter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.practicals.filter = filterValue.trim().toLowerCase();
   }
 
 }

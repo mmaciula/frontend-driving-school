@@ -26,6 +26,7 @@ export class CoursesListComponent implements OnInit {
   constructor(private courseService: CourseService, private userService: UserService, private toastr: ToastrService) {}
 
   ngOnInit() {
+    this.paginator._intl.itemsPerPageLabel = 'Liczba elementów';
     this.courseInfo();
     this.allCourses.sort = this.sort;
     this.allCourses.paginator = this.paginator;

@@ -5,11 +5,15 @@
 }
 
 .mat-cell {
+    border-bottom-color: rgba(117, 117, 117, 0.12)!important;
     font-family: 'Montserrat';
 }
 
 .mat-header-cell {
-    font-size: 14px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
 }
 
 .mat-raised-button {
@@ -21,8 +25,24 @@ table {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 h4 {
     font-family: 'Montserrat';
+}
+
+.mat-form-field {
+    margin-left: 15%;
+    font-family: 'Montserrat';
+}
+
+input {
+    font-style: italic!important;
+}
+
+.center-container-with-top-margin {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

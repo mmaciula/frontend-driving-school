@@ -7,4 +7,34 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     font-family: 'Montserrat';
+    min-width: 400px;
+}
+
+.mat-table {
+    text-align: center;
+}
+
+.mat-header-cell {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+}
+
+.mat-row {
+    border-bottom-color: rgba(117, 117, 117, 0.12)!important;
+    font-family: 'Montserrat';
+}
+
+.mat-raised-button {
+    color: white;
+    background-color: #343a40;
+}
+
+.mat-form-field {
+    font-family: 'Montserrat';
+}
+
+input {
+    font-style: italic!important;
 }
