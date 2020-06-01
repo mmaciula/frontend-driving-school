@@ -23,7 +23,18 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Zajęcia praktyczne</th>
             <td mat-cell *matCellDef="let element">
-            <button mat-icon-button aria-label="Zajęcia praktyczne" (click)="selectCourse(element.id)" [routerLink]="['../course-practicals']"><mat-icon>add_road</mat-icon></button>
+                <button mat-icon-button aria-label="Zajęcia praktyczne" (click)="selectCourse(element.id)" [routerLink]="['../course-practicals']">
+                    <mat-icon>add_road</mat-icon>
+                </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="exam">
+            <th mat-header-cell *matHeaderCellDef>Umów egzamin</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button aria-label="Umów egzamin" (click)="selectCourse(element.id)" 
+                    [routerLink]="['../create-exam']">
+                    <mat-icon>assignment</mat-icon>
+                </button>
           </td>
         </ng-container>
       

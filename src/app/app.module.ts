@@ -17,12 +17,15 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatCardModule, MatListModule, MatTabsModule, MatTableModule, MatSortModule,
-  MatPaginatorModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+  MatPaginatorModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDatepickerModule,
+  MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesListComponent } from './course/courses-list/courses-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserCoursesComponent } from './course/user-courses/user-courses/user-courses.component';
 import { CoursePracticalsComponent } from './course/course-practicals/course-practicals.component';
+import { ExamComponent } from './exam/exam/exam.component';
+import { CreateExamComponent } from './exam/create-exam/create-exam.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { CoursePracticalsComponent } from './course/course-practicals/course-pra
     ImageSliderComponent,
     CoursesListComponent,
     UserCoursesComponent,
-    CoursePracticalsComponent
+    CoursePracticalsComponent,
+    ExamComponent,
+    CreateExamComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +62,14 @@ import { CoursePracticalsComponent } from './course/course-practicals/course-pra
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [InterceptorProviders],
+  providers: [
+    InterceptorProviders,
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

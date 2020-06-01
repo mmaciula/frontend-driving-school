@@ -1,0 +1,42 @@
+.create-exam-card {
+    width: 50%;
+    background-color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: 'Montserrat';
+}
+
+.mat-card-content {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+label {
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-group {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+textarea {
+    height: 150px;
+    width: 500px;
+}
+
+.mat-raised-button {
+    color: white;
+    background-color: #343a40;
+    margin-left: auto;
+    margin-right: auto;
+}

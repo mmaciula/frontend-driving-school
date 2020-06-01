@@ -8,6 +8,7 @@ import { ModeratorComponent } from './moderator/moderator.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CoursePracticalsComponent } from './course/course-practicals/course-practicals.component';
+import { CreateExamComponent } from './exam/create-exam/create-exam.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'course-practicals', component: CoursePracticalsComponent }
+  { path: 'course-practicals', component: CoursePracticalsComponent },
+  { path: 'create-exam', component: CreateExamComponent }
 ];
 
 @NgModule({

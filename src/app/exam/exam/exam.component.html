@@ -1,0 +1,37 @@
+<div class="noExams">
+    <ng-container *ngIf="exams.data.length == 0">
+        <div class="center-container-with-top-margin">
+            <h4>Nie masz aktualnie żadnych ustalonych egzaminów</h4>
+        </div>
+    </ng-container>
+</div>
+
+<div class="mat-elevation-z8">
+      <table mat-table [dataSource]="exams" matSort *ngIf="exams.data.length > 0">
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+            <td mat-cell *matCellDef="let element"> {{ element.examDate.substring(0,10) }} </td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Godzina </th>
+            <td mat-cell *matCellDef="let element"> {{ element.examDate.substring(11,16) }} </td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon *ngIf="element.passed">done</mat-icon>
+                <mat-icon *ngIf="!element.passed">schedule</mat-icon>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+      <mat-form-field>
+        <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
+        <input matInput (keyup)="filter($event)" placeholder="data, godzina, status">
+    </mat-form-field>
+  </div>

@@ -1,3 +1,10 @@
+.center-container-with-top-margin {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat';
+}
+
 .mat-elevation-z8 {
     padding-left: 30px;
     padding-right: 30px;
@@ -16,19 +23,10 @@
     color: grey;
 }
 
-.mat-raised-button {
-    color: white;
-    background-color: #343a40;
-}
-
 table {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-}
-
-h4 {
-    font-family: 'Montserrat';
 }
 
 .mat-form-field {
@@ -38,10 +36,4 @@ h4 {
 
 input {
     font-style: italic!important;
-}
-
-.center-container-with-top-margin {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }

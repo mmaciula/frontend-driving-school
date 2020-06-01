@@ -1,0 +1,45 @@
+<div class="create-exam-container">
+    <mat-card class="create-exam-card" dynamicHeight="true">
+        <mat-card-content>
+            <h2>Wypełnij poniższy formularz i umów się na egzamin</h2>
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="date">Preferowana data</label>
+                    <input type="text" class="form-control" name="date" [(ngModel)]="form.date" required minlength="10" maxlength="10" #date="ngModel" />
+                    <div class="alert-danger" *ngIf="f.submitted && date.invalid">
+                        <div *ngIf="date.errors.required">Musisz wpisać date</div>
+                        <div *ngIf="date.errors.minlength">Niepoprawna forma daty</div>
+                        <div *ngIf="date.errors.maxlength">Niepoprawna forma daty</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Godzina rozpoczęcia</label>
+                    <input type="text" placeholder="np. &nbsp; 12:30" class="form-control" name="time" [(ngModel)]="form.time" required minlength="5" maxlength="5" #time="ngModel" />
+                    <div class="alert-danger" *ngIf="f.submitted && time.invalid">
+                        <div *ngIf="time.errors.required">Musisz zaproponować jakąś godzinę</div>
+                        <div *ngIf="time.errors.minlength">Niepoprawna forma godziny</div>
+                        <div *ngIf="time.errors.maxlength">Niepoprawna forma godziny</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Jak oceniasz naszą szkołę?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select id="schoolRate">
+                        <option>&mdash;</option>
+                        <option>Jesteście najlepsi</option>
+                        <option>Bardzo dobrze</option>
+                        <option>Średnio</option>
+                        <option>Może być</option>
+                        <option>Fatalnie</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="time">Uwagi</label><br>
+                    <textarea class="textarea" name="message" placeholder="Jeśli masz jakieś uwagi lub sugestie wprowadź je w tym miejscu. Dziękuejmy."></textarea>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button>Umów</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

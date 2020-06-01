@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./user-courses.component.scss']
 })
 export class UserCoursesComponent implements OnInit {
-  displayedColumns = ['name', 'startDate', 'instructorName', 'action'];
+  displayedColumns = ['name', 'startDate', 'instructorName', 'action', 'exam'];
   courses = new MatTableDataSource<UserDTO>();
   id: number;
   user;
