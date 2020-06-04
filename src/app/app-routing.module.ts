@@ -9,6 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CoursePracticalsComponent } from './course/course-practicals/course-practicals.component';
 import { CreateExamComponent } from './exam/create-exam/create-exam.component';
+import { PracticalAddRateComponent } from './course/practical-add-rate/practical-add-rate.component';
+import { PracticalAddCommentComponent } from './course/practical-add-comment/practical-add-comment.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'course-practicals', component: CoursePracticalsComponent },
-  { path: 'create-exam', component: CreateExamComponent }
+  { path: 'create-exam', component: CreateExamComponent },
+  { path: 'practical-add-rate', component: PracticalAddRateComponent },
+  { path: 'practical-add-comment', component: PracticalAddCommentComponent }
 ];
 
 @NgModule({

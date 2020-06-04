@@ -26,6 +26,9 @@ import { UserCoursesComponent } from './course/user-courses/user-courses/user-co
 import { CoursePracticalsComponent } from './course/course-practicals/course-practicals.component';
 import { ExamComponent } from './exam/exam/exam.component';
 import { CreateExamComponent } from './exam/create-exam/create-exam.component';
+import { InstructorCoursePracticalsComponent } from './course/instructor-course-practicals/instructor-course-practicals.component';
+import { PracticalAddRateComponent } from './course/practical-add-rate/practical-add-rate.component';
+import { PracticalAddCommentComponent } from './course/practical-add-comment/practical-add-comment.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { CreateExamComponent } from './exam/create-exam/create-exam.component';
     UserCoursesComponent,
     CoursePracticalsComponent,
     ExamComponent,
-    CreateExamComponent
+    CreateExamComponent,
+    InstructorCoursePracticalsComponent,
+    PracticalAddRateComponent,
+    PracticalAddCommentComponent
   ],
   imports: [
     BrowserModule,

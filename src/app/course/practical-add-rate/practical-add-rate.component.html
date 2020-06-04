@@ -1,0 +1,19 @@
+<div class="create-exam-container">
+    <mat-card class="create-exam-card" dynamicHeight="true">
+        <mat-card-content>
+            <h2>Ocena z zajęć</h2>
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="instructorRate">Ocena</label>
+                    <input type="text" class="form-control" name="instructorRate" [(ngModel)]="form.instructorRate" required #instructorRate="ngModel" />
+                    <div class="alert-danger" *ngIf="f.submitted && instructorRate.invalid">
+                        <div *ngIf="time.errors.required">Musisz wpisać ocenę</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button>Oceń</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

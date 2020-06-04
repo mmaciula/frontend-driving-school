@@ -1,0 +1,19 @@
+<div class="create-exam-container">
+    <mat-card class="create-exam-card" dynamicHeight="true">
+        <mat-card-content>
+            <h2>Komentarz do zajęć</h2>
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="comment">Komentarz</label>
+                    <input type="text" class="form-control" name="comment" [(ngModel)]="form.comment" required #comment="ngModel" />
+                    <div class="alert-danger" *ngIf="f.submitted && comment.invalid">
+                        <div *ngIf="time.errors.required">Musisz wpisać komentarz</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button>Dodaj</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
