@@ -29,6 +29,8 @@ import { CreateExamComponent } from './exam/create-exam/create-exam.component';
 import { InstructorCoursePracticalsComponent } from './course/instructor-course-practicals/instructor-course-practicals.component';
 import { PracticalAddRateComponent } from './course/practical-add-rate/practical-add-rate.component';
 import { PracticalAddCommentComponent } from './course/practical-add-comment/practical-add-comment.component';
+import { CreateCoursePracticalComponent } from './course/create-course-practical/create-course-practical.component';
+import { InstructorExamComponent } from './exam/instructor-exam/instructor-exam.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { PracticalAddCommentComponent } from './course/practical-add-comment/pra
     CreateExamComponent,
     InstructorCoursePracticalsComponent,
     PracticalAddRateComponent,
-    PracticalAddCommentComponent
+    PracticalAddCommentComponent,
+    CreateCoursePracticalComponent,
+    InstructorExamComponent
   ],
   imports: [
     BrowserModule,

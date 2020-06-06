@@ -41,4 +41,8 @@ export class PracticalsService {
   public commentPractical(id, comment): Observable<any> {
     return this.httpClient.post(API + '/' + id + '/comment', comment);
   }
+
+  createNewPractical(id, time): Observable<any> {
+    return this.httpClient.post(API + '/add/' + id, { date: time });
+  }
 }

@@ -32,6 +32,6 @@ h2 {
 .mat-raised-button {
     color: white;
     background-color: #343a40;
-    margin-left: auto!important;
-    margin-right: auto!important;
+    display: block;
+    margin: auto;
 }

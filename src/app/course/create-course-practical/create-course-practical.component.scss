@@ -2,6 +2,8 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
+    background-color: #f7f7f7;
+    padding-top: 10px;
 }
 
 .mat-cell {
@@ -16,15 +18,11 @@
     color: grey;
 }
 
-.mat-raised-button {
-    color: white;
-    background-color: #343a40;
-}
-
 table {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
 }
 
 h4 {
@@ -40,18 +38,37 @@ input {
     font-style: italic!important;
 }
 
-.center-container-with-top-margin {
+.mat-card-content {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+.create-practical-card {
+    width: 50%;
+    background-color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: 'Montserrat';
+}
+
+h3 {
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 50px;
+    color: gray;
 }
 
-.timeCell {
-    text-align: center;
-}
-
-.create-button {
+.mat-raised-button {
+    color: white;
+    background-color: #343a40;
     display: block;
     margin: auto;
-    margin-top: 20px;
+}
+
+.form-group {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -25,4 +25,8 @@ export class CourseService {
   public setCourseId(id: number) {
     this.idSource.next(id);
   }
+
+  public getAllInstructorCourses(): Observable<any> {
+    return this.http.get(API + '/instructor');
+  }
 }

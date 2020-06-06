@@ -18,4 +18,8 @@ export class ExamService {
   getAllStudentExams(): Observable<any> {
     return this.httpClient.get(API + '/student');
   }
+
+  getAllInstructroExams(): Observable<any> {
+    return this.httpClient.get(API + '/instructor');
+  }
 }

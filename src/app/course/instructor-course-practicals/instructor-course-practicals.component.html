@@ -1,4 +1,8 @@
 <div class="mat-elevation-z8">
+    <button class="create-button" mat-raised-button [routerLink]="['../create-course-practical']">Utwórz nowy termin zajęć praktycznych</button>
+</div>
+
+<div class="mat-elevation-z8">
     <table mat-table [dataSource]="instructorPractical" matSort>
         <ng-container matColumnDef="course">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurs </th>

@@ -1,0 +1,58 @@
+<div class="create-practical-container">
+    <mat-card class="create-practical-card" dynamicHeight="true">
+        <mat-card-content>
+            <div class="mat-elevation-z8" *ngIf="instructorCourses.data.length == 0">
+                <h3>Nie prowadzisz żadnych kursów</h3>
+            </div>
+            <div class="mat-elevation-z8" *ngIf="instructorCourses.data.length > 0">
+                <h4>Wybierz kurs:</h4>
+                <table mat-table [dataSource]="instructorCourses" matSort>
+                    <ng-container matColumnDef="course">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurs </th>
+                        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="startDate">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Data rozpoczęcia </th>
+                        <td mat-cell *matCellDef="let element"> {{ element.startDate.substring(0,10) }} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="pick">
+                        <th mat-header-cell *matHeaderCellDef>Wybierz</th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-icon-button aria-label="Wybierz ten kurs" (click)="pickThisCourse(element.id)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <h4>Ustal datę i godzinę:</h4>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="date">Preferowana data</label>
+                        <input type="text" class="form-control" name="date" [(ngModel)]="form.date"required minlength="10" maxlength="10"
+                             #date="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && date.invalid">
+                            <div *ngIf="date.errors.required">Musisz wpisać date</div>
+                            <div *ngIf="date.errors.minlength">Niepoprawna forma daty</div>
+                            <div *ngIf="date.errors.maxlength">Niepoprawna forma daty</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Godzina rozpoczęcia</label>
+                        <input type="text" placeholder="np. &nbsp; 12:30" class="form-control" name="time" [(ngModel)]="form.time" required minlength="5" maxlength="5" #time="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && time.invalid">
+                            <div *ngIf="time.errors.required">Musisz zaproponować jakąś godzinę</div>
+                            <div *ngIf="time.errors.minlength">Niepoprawna forma godziny</div>
+                            <div *ngIf="time.errors.maxlength">Niepoprawna forma godziny</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button mat-raised-button>Utwórz</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
