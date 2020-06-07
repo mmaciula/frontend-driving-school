@@ -1,9 +1,4 @@
 <div class="mat-elevation-z8">
-  <mat-form-field>
-    <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
-    <input matInput (keyup)="filter($event)" placeholder="Kategoria, data rozpoczęcia, koszt lub imię i nazwisko instruktora">
-  </mat-form-field>
-
     <table mat-table [dataSource]="allCourses" matSort>
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Kategoria </th>
@@ -43,4 +38,9 @@
     </table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+    <mat-form-field>
+      <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
+      <input matInput (keyup)="filter($event)" placeholder="Kategoria, data rozpoczęcia, koszt lub imię i nazwisko instruktora">
+    </mat-form-field>
 </div>

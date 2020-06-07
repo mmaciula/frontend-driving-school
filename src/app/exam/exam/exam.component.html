@@ -6,7 +6,7 @@
     </ng-container>
 </div>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="exams.data.length > 0">
       <table mat-table [dataSource]="exams" matSort *ngIf="exams.data.length > 0">
           <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
@@ -34,4 +34,4 @@
         <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
         <input matInput (keyup)="filter($event)" placeholder="data, godzina, status">
     </mat-form-field>
-  </div>
+</div>

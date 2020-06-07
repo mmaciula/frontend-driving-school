@@ -6,7 +6,7 @@
     </ng-container>
 </div>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="courses.data.length > 0">
     <table mat-table [dataSource]="courses" matSort>
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Kategoria </th>
@@ -49,7 +49,7 @@
     </mat-form-field>
 </div>
 
-<div class="practicalsLabel">
+<div class="practicalsLabel" *ngIf="practicals.data.length > 0">
     <h4>Twoje zajęcia praktyczne:</h4>
 </div>
 

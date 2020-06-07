@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
   form: any = {};
   errorMessage = '';
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,11 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.auth.register(this.form).subscribe(data => {
         this.success = true;
+        setTimeout(
+          () => {
+            this.router.navigate(['/']);
+          }, 500
+        );
       },
       errorMsg => {
         this.failed = true;

@@ -45,6 +45,7 @@ import { AdminCourseComponent } from './admin/admin-course/admin-course.componen
 import { DialogComponent } from './admin/dialog/dialog.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { RoleDialogComponent } from './admin/role-dialog/role-dialog.component';
+import { SignInForCourseDialogComponent } from './course/sign-in-for-course-dialog/sign-in-for-course-dialog.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { RoleDialogComponent } from './admin/role-dialog/role-dialog.component';
     AdminCourseComponent,
     DialogComponent,
     AdminUsersComponent,
-    RoleDialogComponent
+    RoleDialogComponent,
+    SignInForCourseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,8 @@ import { RoleDialogComponent } from './admin/role-dialog/role-dialog.component';
   bootstrap: [AppComponent],
   entryComponents: [
     DialogComponent,
-    RoleDialogComponent
+    RoleDialogComponent,
+    SignInForCourseDialogComponent
   ]
 })
 export class AppModule { }
