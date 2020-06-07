@@ -46,6 +46,7 @@ import { DialogComponent } from './admin/dialog/dialog.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { RoleDialogComponent } from './admin/role-dialog/role-dialog.component';
 import { SignInForCourseDialogComponent } from './course/sign-in-for-course-dialog/sign-in-for-course-dialog.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { SignInForCourseDialogComponent } from './course/sign-in-for-course-dial
     DialogComponent,
     AdminUsersComponent,
     RoleDialogComponent,
-    SignInForCourseDialogComponent
+    SignInForCourseDialogComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

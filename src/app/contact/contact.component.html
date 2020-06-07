@@ -1,0 +1,34 @@
+<div class="contact-container">
+    <mat-card class="contact-card" dynamicHeight="true">
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <h4>Formularz kontaktowy</h4>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" placeholder="Imię" class="form-control" name="name" [(ngModel)]="form.name" required #name="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && name.invalid">
+                            <div *ngIf="name.errors.required">Musisz podać imię</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                            <div *ngIf="email.errors.required">Musisz podać email</div>
+                            <div *ngIf="email.errors.email">To nie jest email</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Treść wiadomości" class="form-control" name="content" [(ngModel)]="form.content" required 
+                            #content="ngModel"></textarea>
+                        <div class="alert-danger" *ngIf="f.submitted && content.invalid">
+                            <div *ngIf="content.errors.required">Musisz podać treść wiadomości</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button mat-raised-button>Wyślij</button> 
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
