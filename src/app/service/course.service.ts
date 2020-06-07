@@ -29,4 +29,20 @@ export class CourseService {
   public getAllInstructorCourses(): Observable<any> {
     return this.http.get(API + '/instructor');
   }
+
+  public createCourse(data, courseDate): Observable<any> {
+    return this.http.post(API + '/add',
+    {
+      name: data.type,
+      description: data.description,
+      cost: data.cost,
+      startDate: courseDate,
+      instructorUsername: data.instructor,
+      members: data.members
+    });
+  }
+
+  public deleteCourse(id): Observable<any> {
+    return this.http.delete(API + '/delete/' + id);
+  }
 }

@@ -20,4 +20,12 @@ export class UserService {
   public assignCourseToUser(id): Observable<any> {
     return this.httpClient.put(API + '/course/add/' + id, this.body);
   }
+
+  public getAllUsers(): Observable<any> {
+    return this.httpClient.get(API);
+  }
+
+  public assignRoleToUser(role, username): Observable<any> {
+    return this.httpClient.post(API + '/roles/assign/' + role + '/' + username, this.body);
+  }
 }

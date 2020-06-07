@@ -1,0 +1,64 @@
+.admin-course-card {
+    width: 60%;
+    background-color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    min-width: 400px;
+}
+
+.mat-table {
+    text-align: center;
+}
+
+.mat-header-cell {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+}
+
+.mat-row {
+    border-bottom-color: rgba(117, 117, 117, 0.12)!important;
+    font-family: 'Montserrat';
+}
+
+.mat-form-field {
+    font-family: 'Montserrat';
+}
+
+input {
+    font-style: italic!important;
+}
+
+.mat-raised-button {
+    color: white;
+    background-color: #343a40;
+    display: block;
+    margin: auto;
+}
+
+.form-group {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea {
+    min-width: 250px;
+    min-height: 90px;
+}
+
+.form-group-date {
+    width: 124px;
+    margin-bottom: 10px;
+    display: inline-grid;
+}
+
+.met-elevation-z8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

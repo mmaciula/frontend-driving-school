@@ -1,0 +1,97 @@
+<div class="admin-course-container">
+    <mat-card class="admin-course-create-card" dynamicHeight>
+        <mat-card-content>
+            <div class="met-elevation-z8">
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" placeholder="Rodzaj kursu" class="form-control" name="type" [(ngModel)]="form.type" required #type="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && type.invalid">
+                            <div *ngIf="type.errors?.required">Musisz podać rodzaj kursu</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--<input type="text" placeholder="Opis" class="form-control" name="description" [(ngModel)]="form.description" required minlength="5" 
+                            maxlength="255" #description="ngModel" />-->
+                        <textarea placeholder="Opis" class="form-control" name="description" [(ngModel)]="form.description" required #description="ngModel"></textarea>
+                        <div class="alert-danger" *ngIf="f.submitted && description.invalid">
+                            <div *ngIf="description.errors?.required">Musisz wprowadzić opis</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Koszt" class="form-control" name="cost" [(ngModel)]="form.cost" required min="1" #cost="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && cost.invalid">
+                            <div *ngIf="cost.errors?.required">Musisz wprowadzić koszt</div>
+                        </div>
+                    </div>
+                    <div class="form-group-date">
+                        <input type="text" placeholder="Data" class="form-control" name="date" [(ngModel)]="form.date" required #date="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted">
+                            <div *ngIf="date.errors?.required">Musisz podać datę</div>
+                        </div>
+                    </div>
+                    <div class="form-group-date">
+                        <input type="text" placeholder="Godzina" class="form-control" name="time" [(ngModel)]="form.time" required #time="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted">
+                            <div *ngIf="time.errors?.required">Musisz podać godzinę</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Instruktor" class="form-control" name="instructor" [(ngModel)]="form.instructor" required minlength="3"
+                            #instructor="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && instructor.invalid">
+                            <div *ngIf="instructor.errors?.required">Musisz podać instruktora</div>
+                            <div *ngIf="instructor.errors?.minlength">Podana nazwa jest za krótka</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Ilość miejsc" class="form-control" name="members" [(ngModel)]="form.members" required min="5" max="20"
+                            #members="ngModel" />
+                        <div class="alert-danger" *ngIf="f.submitted && members.invalid">
+                            <div *ngIf="members.errors?.required">Musisz wprowadzić ilość miejsc</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button mat-raised-button>Utwórz</button> 
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="admin-course-card" dynamicHeight="true">
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <mat-table #table [dataSource]="courses" matSort>
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Nazwa</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+                    </ng-container>         
+                    <ng-container matColumnDef="startDate">
+                        <mat-header-cell *matHeaderCellDef>Data rozpoczęcia</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.startDate.substring(0,10) }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="instructorName">
+                        <mat-header-cell *matHeaderCellDef>Instruktor</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.instructorName }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="delete">
+                        <mat-header-cell *matHeaderCellDef>Usuń</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-icon-button aria-label="Usuń ten kurs" (click)="openDialog(element.id)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+                    
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+            <mat-form-field>
+                <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
+                <input matInput (keyup)="filter($event)" placeholder="słowo kluczowe">
+              </mat-form-field> 
+        </mat-card-content>
+    </mat-card>
+</div>

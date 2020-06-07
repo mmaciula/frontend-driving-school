@@ -1,0 +1,46 @@
+<div class="admin-users-container">
+    <mat-card class="admin-users-card" dynamicHeight="true">
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <mat-table #table [dataSource]="users" matSort>
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Imię i nazwisko</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.name }} {{ element.surname }} </mat-cell>
+                    </ng-container>         
+                    <ng-container matColumnDef="username">
+                        <mat-header-cell *matHeaderCellDef>Nick</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.username }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="role">
+                        <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <div *ngIf="element.roles.length == 1; else elseBlock">
+                                użytkownik
+                            </div>
+                            <ng-template #elseBlock>
+                                instruktor
+                            </ng-template>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <mat-header-cell *matHeaderCellDef>Nadaj uprawnienia</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-icon-button aria-label="Nadaj uprawnienia" (click)="openDialog(element.username)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+                    
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+            <mat-form-field>
+                <mat-label><mat-icon class="display">search</mat-icon>&nbsp;Szukaj</mat-label>
+                <input matInput (keyup)="filter($event)" placeholder="słowo kluczowe">
+              </mat-form-field> 
+        </mat-card-content>
+    </mat-card>
+</div>

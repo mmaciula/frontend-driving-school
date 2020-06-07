@@ -1,0 +1,15 @@
+<div class="dialog-container">
+    <h2 mat-dialog-title>Wpisz nową rolę</h2>
+    <mat-dialog-content>
+        <form name="form" #f="ngForm" novalidate>
+            <div class="form-group">
+                <input type="text" class="form-control" name="role" [(ngModel)]="form.role" #role="ngModel" />
+            </div>
+        </form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button class="mat-raised-button" (click)="close()">Anuluj</button>&nbsp;
+        <button class="mat-raised-button mat-primary" (click)="save()">Nadaj</button>
+    </mat-dialog-actions>
+</div>

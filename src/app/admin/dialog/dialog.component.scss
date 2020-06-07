@@ -1,0 +1,28 @@
+.dialog-container {
+    background-color: #e0d9d9;
+    border-radius: 10px;
+}
+
+mat-dialog-content {
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+p {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 30px;
+}
+
+.mat-raised-button {
+    color: white;
+    background-color: #343a40;
+    display: inline-grid;
+}
+
+mat-dialog-actions {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
