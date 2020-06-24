@@ -9,9 +9,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class ImageSliderComponent implements OnInit {
 
   componentsList = [
-    { img: 'assets/images/1.jpg', description: 'Some description picture one' },
-    { img: 'assets/images/2.jpg', description: 'Some description picture two' },
-    { img: 'assets/images/3.jpg', description: 'Some description picture three' },
+    { img: 'assets/images/car.jpg', description: 'Z nami zawsze do celu' },
+    { img: 'assets/images/sukces.jpg', description: 'Najwyższa zdawalność w regionie' }
   ];
 
   constructor(config: NgbCarouselConfig) {
